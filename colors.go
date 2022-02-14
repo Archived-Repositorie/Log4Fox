@@ -3,7 +3,7 @@ package main
 type color string
 type colors map[int8]color
 
-var ColorReset = colors{0: "\033[0m"}
+var ColorReset = colors{0: "\033[m"}
 
 var ColorFnt = colors{
 	0: "\033[0;30m",

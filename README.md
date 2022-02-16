@@ -1,2 +1,2 @@
-# Log4Go
+# Log4Fox
 A logging library fo Go

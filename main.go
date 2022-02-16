@@ -1,1 +1,1 @@
-package log4go
+package main

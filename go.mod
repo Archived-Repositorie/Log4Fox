@@ -1,3 +1,3 @@
-module com.github.purotoapp.log4fox
+module github.com/PurotoApp/Log4Fox
 
 go 1.17

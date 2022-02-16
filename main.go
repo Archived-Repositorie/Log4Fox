@@ -1,1 +1,1 @@
-package github.com/PurotoApp/Log4Fox
+package log4fox

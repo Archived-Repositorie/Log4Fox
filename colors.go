@@ -1,4 +1,4 @@
-package main
+package github.com/PurotoApp/Log4Fox
 
 type color string
 type colors map[int8]color

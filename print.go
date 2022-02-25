@@ -5,12 +5,14 @@ import (
 	"os"
 )
 
-func Stderr(s string) {
-	os.Stderr.WriteString(s)
+func Stderr(s string) error {
+	_, err := os.Stderr.WriteString(s)
+	return err
 }
 
-func Stdout(s string) {
-	os.Stdout.WriteString(s)
+func Stdout(s string) error {
+	_, err := os.Stdout.WriteString(s)
+	return err
 }
 
 func Stdin(s *string) error {

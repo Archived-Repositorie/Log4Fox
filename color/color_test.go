@@ -1,6 +1,10 @@
-package log4fox
+package color
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/PurotoApp/Log4Fox/essential"
+)
 
 func TestClr(t *testing.T) {
 	if FONT_BLACK != "\033[0;30m" {
@@ -8,6 +12,6 @@ func TestClr(t *testing.T) {
 	} else {
 		c := Color(FONT_BLACK, "Hello world!")
 
-		Stderr(c)
+		essential.Stderr(c)
 	}
 }

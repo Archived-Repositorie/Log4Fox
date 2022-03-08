@@ -1,4 +1,4 @@
-package log4fox
+package essential
 
 import (
 	"bufio"

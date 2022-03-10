@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-var testLogger = logObject{name: "test"}
+var testLogger = loggerObject{name: "test"}
 
 func TestLog(t *testing.T) {
 	if err :=testLogger.Logln("Test"); err != nil {

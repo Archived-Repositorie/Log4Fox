@@ -7,7 +7,7 @@ type logger interface {
 }
 
 type loggerObject struct {
-	name string
-	dateFormat string
-	color bool
+	Name string
+	DateFormat string
+	Color bool
 }

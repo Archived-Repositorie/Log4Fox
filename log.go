@@ -4,27 +4,63 @@ import (
 	"fmt"
 	"time"
 
-	_ "github.com/PurotoApp/Log4Fox/color"
+	c "github.com/PurotoApp/Log4Fox/color"
 	"github.com/PurotoApp/Log4Fox/essential"
 )
 
+var (
+	text = "%v [LOG] %v %v"
+	color = c.FONT_CYAN
+	name = "go"
+)
 
-
-func (l loggerObject) Logln(a ...interface{}) error {
-	fmt.Println(l.color)
-	fmt.Println(l.dateFormat)
-	fmt.Println(l.name)
-	s := fmt.Sprintf("%v [LOG] %v", time.Now().Format("2006.01.02 15:04:05"), a)
-	err := essential.Stderr(fmt.Sprintln(s))
+func (l *loggerObject) Logln(a ...interface{}) error {
+	now := time.Now()
+	if l.DateFormat == "" {
+		l.DateFormat = "2006.01.02 15:04:05"
+	}
+	if !l.Color {
+		color = c.RESET
+	}
+	if l.Name == "" {
+		l.Name = name
+	}
+	text = fmt.Sprintf(text, now.Format(l.DateFormat), l.Name, fmt.Sprintln(a...))
+	text = c.Color(color, text)
+	err := essential.Stderr(text)
 	return err
 }
 
 func (l loggerObject) Log(a ...interface{}) error {
-	err := essential.Stderr(fmt.Sprint(a...))
+	now := time.Now()
+	if l.DateFormat == "" {
+		l.DateFormat = "2006.01.02 15:04:05"
+	}
+	if !l.Color {
+		color = c.RESET
+	}
+	if l.Name == "" {
+		l.Name = name
+	}
+	text = fmt.Sprintf(text, now.Format(l.DateFormat), l.Name, fmt.Sprintln(a...))
+	text = c.Color(color, text)
+	err := essential.Stderr(text)
 	return err
-} 
+}
 
-func (l loggerObject) Logf(a string, c ...interface{}) error {
-	err := essential.Stderr(fmt.Sprintf(a, c...))
+func (l loggerObject) Logf(a string, u ...interface{}) error {
+	now := time.Now()
+	if l.DateFormat == "" {
+		l.DateFormat = "2006.01.02 15:04:05"
+	}
+	if !l.Color {
+		color = c.RESET
+	}
+	if l.Name == "" {
+		l.Name = name
+	}
+	text = fmt.Sprintf(text, now.Format(l.DateFormat), l.Name, fmt.Sprintf(a, u...))
+	text = c.Color(color, text)
+	err := essential.Stderr(text)
 	return err
-} 
+}

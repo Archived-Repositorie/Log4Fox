@@ -4,10 +4,10 @@ import (
 	"testing"
 )
 
-var testLogger = loggerObject{name: "test"}
+var testLogger = loggerObject{Name: "test", Color: true}
 
 func TestLog(t *testing.T) {
-	if err :=testLogger.Logln("Test"); err != nil {
+	if err := testLogger.Logln("Test"); err != nil {
 		t.Error(err)
 	}
 }

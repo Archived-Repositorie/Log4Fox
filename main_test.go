@@ -24,3 +24,9 @@ func TestClr(t *testing.T) {
 		essential.Stderr(c)
 	}
 }
+
+func TestLoc(t *testing.T) {
+	if file, _, line, ok  := essential.Locate(1); !(file == "main_test.go" && line == 29 && ok == true) {
+		t.Errorf("Locate not correct, returned values: file:%v line:%v ok:%v", file, line, ok)
+	}
+}

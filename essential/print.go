@@ -1,24 +1,16 @@
 package essential
 
 import (
-	"bufio"
-	"os"
+	"golang.org/x/sys/unix"
 )
 
 func Stderr(s string) error {
-	_, err := os.Stderr.WriteString(s)
+	_, err := unix.Write(unix.Stderr, []byte(s))
 	return err
 }
 
 func Stdout(s string) error {
-	_, err := os.Stdout.WriteString(s)
+	_, err := unix.Write(unix.Stdout, []byte(s))
 	return err
 }
 
-func Stdin(s *string) error {
-	scanner := bufio.NewScanner(os.Stdin)
-	if scanner.Scan() {
-		*s = scanner.Text()
-	}
-	return scanner.Err()
-}

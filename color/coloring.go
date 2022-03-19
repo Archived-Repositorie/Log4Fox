@@ -1,11 +1,11 @@
-package log4fox
+package color
 
 import (
 	"fmt"
 )
 
-func Color(c string, s string) string {
-	return c + s + RESET
+func Color(c string, s ...interface{}) string {
+	return c + fmt.Sprint(s...) + RESET
 }
 
 func Colorf(c string, s string, k ...interface{}) string {

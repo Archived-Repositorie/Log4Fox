@@ -1,4 +1,4 @@
-package log4fox
+package color
 
 const (
 	FONT_BLACK       = "\033[0;30m"

@@ -14,7 +14,7 @@ var (
 	name = "go"
 )
 
-func (l *loggerObject) Logln(a ...interface{}) error {
+func (l *LoggerObject) Logln(a ...interface{}) error {
 	now := time.Now()
 	if l.DateFormat == "" {
 		l.DateFormat = "2006.01.02 15:04:05"
@@ -31,7 +31,7 @@ func (l *loggerObject) Logln(a ...interface{}) error {
 	return err
 }
 
-func (l loggerObject) Log(a ...interface{}) error {
+func (l *LoggerObject) Log(a ...interface{}) error {
 	now := time.Now()
 	if l.DateFormat == "" {
 		l.DateFormat = "2006.01.02 15:04:05"
@@ -48,7 +48,7 @@ func (l loggerObject) Log(a ...interface{}) error {
 	return err
 }
 
-func (l loggerObject) Logf(a string, u ...interface{}) error {
+func (l *LoggerObject) Logf(a string, u ...interface{}) error {
 	now := time.Now()
 	if l.DateFormat == "" {
 		l.DateFormat = "2006.01.02 15:04:05"

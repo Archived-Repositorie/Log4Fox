@@ -7,7 +7,7 @@ import (
 	"github.com/PurotoApp/Log4Fox/essential"
 )
 
-var testLogger = loggerObject{Name: "test", Color: true}
+var testLogger = LoggerObject{Name: "test", Color: true}
 
 func TestLog(t *testing.T) {
 	if err := testLogger.Logln("Test"); err != nil {

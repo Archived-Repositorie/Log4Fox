@@ -7,13 +7,13 @@ import (
 	"github.com/PurotoApp/Log4Fox/essential"
 )
 
-var testLogger = LoggerObject{Name: "test", Color: true}
+// var testLogger = LoggerObject{Name: "test", Color: true}
 
-func TestLog(t *testing.T) {
-	if err := testLogger.Logln("Test"); err != nil {
-		t.Error(err)
-	}
-}
+// func TestLog(t *testing.T) {
+// 	if err := testLogger.Logln("Test"); err != nil {
+// 		t.Error(err)
+// 	}
+// }
 
 func TestClr(t *testing.T) {
 	if c.FONT_BLACK != "\033[0;30m" {

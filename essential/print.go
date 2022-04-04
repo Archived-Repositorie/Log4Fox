@@ -13,4 +13,3 @@ func Stdout(s string) error {
 	_, err := unix.Write(unix.Stdout, []byte(s))
 	return err
 }
-

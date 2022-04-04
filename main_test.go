@@ -30,3 +30,8 @@ func TestLoc(t *testing.T) {
 		t.Errorf("Locate not correct, returned values: file:%v line:%v ok:%v", file, line, ok)
 	}
 }
+
+func TestRpl(t *testing.T) {
+	var test = "test"
+	essential.Replace(&test, "t", "a", -1)
+}

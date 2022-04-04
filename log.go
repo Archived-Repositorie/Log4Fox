@@ -1,5 +1,7 @@
 package log4fox
 
+
+
 // import (
 // 	"fmt"
 // 	"time"
